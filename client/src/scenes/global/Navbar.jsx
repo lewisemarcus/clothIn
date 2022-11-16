@@ -24,7 +24,7 @@ const Navbar = () => {
             position="fixed"
             top="0"
             left="0"
-            zIndex="1"
+            zIndex={1}
         >
             <Box
                 width="80%"
@@ -46,7 +46,7 @@ const Navbar = () => {
                     display="flex"
                     justifyContent="space-between"
                     columnGap="20px"
-                    zIndex="2"
+                    zIndex={2}
                 >
                     <IconButton sx={{ color: "black" }}>
                         <SearchOutlined />
