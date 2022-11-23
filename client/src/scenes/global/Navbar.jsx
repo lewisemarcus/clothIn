@@ -7,6 +7,7 @@ import {
     SearchOutlined,
 } from "@mui/icons-material"
 import { useNavigate } from "react-router-dom"
+import { setIsCartOpen } from "../../state"
 import { shades } from "../../theme"
 
 const Navbar = () => {

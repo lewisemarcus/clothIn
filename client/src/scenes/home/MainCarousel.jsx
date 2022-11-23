@@ -5,24 +5,26 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore"
 import NavigateNextIcon from "@mui/icons-material/NavigateNext"
 import { shades } from "../../theme"
 
-//imports all images from assets folder
+// imports all images from assets folder
 const importAll = (r) =>
-    r.keys.reduce((acc, item) => {
+    r.keys().reduce((acc, item) => {
         acc[item.replace("./", "")] = r(item)
         return acc
     }, {})
-export const heroTextureImports = importAll(
-    require.context("../../assets", false, /\.(png|jpe?g|svg)$/),
-)
-const MainCarousel = () => {
-    const isNonMobile = useMediaQuery("min-width:600px")
 
+export const heroTextureImports = importAll(
+    require.context("../../assets/images", false, /\.(png|jpe?g|svg)$/),
+)
+
+const MainCarousel = () => {
+    const isNonMobile = useMediaQuery("(min-width:600px)")
+    console.log(heroTextureImports)
     return (
         <Carousel
             infiniteLoop={true}
+            showThumbs={false}
             showIndicators={false}
             showStatus={false}
-            showThumbs={false}
             renderArrowPrev={(onClickHandler, hasPrev, label) => (
                 <IconButton
                     onClick={onClickHandler}
@@ -71,7 +73,7 @@ const MainCarousel = () => {
                         padding="20px"
                         borderRadius="1px"
                         textAlign="left"
-                        backgroundColor="rgba(0, 0, 0, 0.4)"
+                        backgroundColor="rgb(0, 0, 0, 0.4)"
                         position="absolute"
                         top="46%"
                         left={isNonMobile ? "10%" : "0"}
@@ -82,13 +84,13 @@ const MainCarousel = () => {
                         <Typography color={shades.secondary[200]}>
                             -- NEW ITEMS
                         </Typography>
-                        <Typography variant="h1">Winter Sale</Typography>
+                        <Typography variant="h1">Summer Sale</Typography>
                         <Typography
                             fontWeight="bold"
                             color={shades.secondary[300]}
-                            sx={{ textDecoration: "underlined" }}
+                            sx={{ textDecoration: "underline" }}
                         >
-                            Winter Sale
+                            Discover More
                         </Typography>
                     </Box>
                 </Box>
