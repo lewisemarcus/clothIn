@@ -86,7 +86,7 @@ const MainCarousel = () => {
                         <Typography
                             fontWeight="bold"
                             color={shades.secondary[300]}
-                            sx={{}}
+                            sx={{ textDecoration: "underlined" }}
                         >
                             Winter Sale
                         </Typography>
