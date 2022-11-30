@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import Home from "./scenes/home/Home"
 import Navbar from "./scenes/global/Navbar"
-
+import Footer from "./scenes/global/Footer"
 import ItemDetails from "./scenes/itemDetails/ItemDetails"
 import CartMenu from "./scenes/global/CartMenu"
 
@@ -27,6 +27,7 @@ function App() {
                     <Route path="item/:itemId" element={<ItemDetails />} />
                 </Routes>
                 <CartMenu />
+                <Footer />
             </BrowserRouter>
         </div>
     )
