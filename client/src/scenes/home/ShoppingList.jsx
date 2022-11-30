@@ -26,6 +26,16 @@ const ShoppingList = () => {
             getItems()
         }, [])
 
+        const topRatedItems = items.fitler((item) => {
+            item.attributes.category === "topRated"
+        })
+        const newArrivalsItems = items.fitler((item) => {
+            item.attributes.category === "newArrivals"
+        })
+        const bestSellerItems = items.fitler((item) => {
+            item.attributes.category === "bestSellers"
+        })
+
         return <div>Shopping List</div>
     }
 }
