@@ -76,6 +76,10 @@ const checkoutSchema = [
             }),
         }),
     }),
+    yup.object().shape({
+        email: yup.string().required("required"),
+        phoneNumber: yup.string().required("required"),
+    }),
 ]
 
 const Checkout = () => {
